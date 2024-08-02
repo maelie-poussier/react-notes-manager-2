@@ -8,17 +8,18 @@ import { Link } from "react-router-dom";
 export function NoteBrowse(props) {
   const [searchText, setSearchText] = useState("");
   const noteList = useSelector((store) => store.NOTE.noteList);
-  const filteredList = noteList.filter((note) => {
-    const containsTitle = note.title
-      .toUpperCase()
-      .includes(searchText.trim().toUpperCase());
 
-    const containsContent = note.content
-      .toUpperCase()
-      .includes(searchText.trim().toUpperCase());
+  // const filteredList = noteList.filter((note) => {
+  //   const containsTitle = note.title
+  //     .toUpperCase()
+  //     .includes(searchText.trim().toUpperCase());
 
-    return containsTitle || containsContent;
-  });
+  //   const containsContent = note.content
+  //     .toUpperCase()
+  //     .includes(searchText.trim().toUpperCase());
+
+  //   return containsTitle || containsContent;
+  // });
   return (
     <>
       <div className="row justify-content-center mb-5">
@@ -38,7 +39,7 @@ export function NoteBrowse(props) {
           </span>
         </div>
       )}
-      <NoteList noteList={filteredList} />
+      <NoteList noteList={store.NOTE.noteList} />
     </>
   );
 }
