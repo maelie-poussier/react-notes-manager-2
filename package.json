@@ -10,6 +10,8 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "classnames": "^2.5.1",
+    "concurrently": "^8.2.2",
+    "express": "^4.19.2",
     "react": "^18.3.1",
     "react-bootstrap-icons": "^1.11.4",
     "react-dom": "^18.3.1",
@@ -19,11 +21,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"PORT=3000 node server.js\" \"PORT=3200 json-server --watch ./db.json\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev-server": "json-server --watch ./db.json -p 3200"
+    "heroku-postbuild": "npm run build",
+    "client": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
