@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL_API || "http://localhost:3200/notes";
+const BASE_URL = "https://react-notes-manager-feb01eee3746.herokuapp.com/api/notes";
 
 export class NoteAPI {
   static async create(note){
@@ -65,7 +65,6 @@ export class NoteAPI {
     }
   }
 }
-
 
 
 
