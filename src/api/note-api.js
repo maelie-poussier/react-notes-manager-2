@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3200/notes";
+const BASE_URL = process.env.REACT_APP_BASE_URL_API || "http://localhost:3200/notes";
 
 export class NoteAPI {
   static async create(note){
@@ -65,6 +65,7 @@ export class NoteAPI {
     }
   }
 }
+
 
 
 
